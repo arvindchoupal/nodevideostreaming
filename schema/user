@@ -1,0 +1,80 @@
+const mongoose = require('mongoose')
+
+
+const userschema = new mongoose.Schema({
+    "name":{
+        type:String,
+        required:true
+
+    },
+    "blood":{
+        type:String,
+        required:false
+
+    },
+    "email":{
+        type:String,
+        required:false
+    
+    },
+    "password":{
+        type:String,
+        required:false
+    
+    },
+    "gender":{
+        type:String,
+        required:false
+    
+    },
+    "token":{
+        type:String,
+        required:false
+    
+    },
+    "profilepic":{
+        type:String,
+        required:false
+    
+    },
+    "birthdate":{
+  type:String,
+        required:false
+    },
+    "date":{
+        type:String,
+        required:false
+    
+    },
+    "hobbies":{
+        type:Array,
+        required:false
+    
+    },
+    'latitude':{
+        type:String,
+        required:false
+    
+    },
+    'longitude':{
+        type:String,
+        required:false
+    
+    },
+
+})
+
+const hobbiesschema = new mongoose.Schema({
+    "hobby":{
+        type:String,
+        required:true
+
+    }
+    
+
+})
+
+const Hobby = mongoose.model('BLASTHOBBY',hobbiesschema)
+
+const User = mongoose.model('BLAST',userschema)
+module.exports = User
